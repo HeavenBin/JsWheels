@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>tab切换栏</title>
+    <link rel="stylesheet" href="reset.css">
+    <style>
+        .box { width: 300px; height: 350px; margin: 0 auto; margin-top: 100px;}
+        .box .top { width: 100%; height: 50px; background-color: yellowgreen; font-size: 15px; line-height: 50px; text-align: center; }
+        .box .top .tab_title { float: left; width: 25%; }
+        .box .top .tab_title.select { background-color: #999; }
+        .box .bottom .tab_content{ width: 100%; height: 300px; background-color: #999; display: none; padding: 10px;}
+        .box .bottom .tab_content.select { display: block; }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="top">
+            <ul class="auto">
+                <li class="tab_title select">切换栏1</li>
+                <li class="tab_title">切换栏2</li>
+                <li class="tab_title">切换栏3</li>
+                <li class="tab_title">切换栏4</li>
+            </ul>
+        </div>
+        <div class="bottom">
+            <div class="tab_content select">内容1</div>
+            <div class="tab_content">内容2</div>
+            <div class="tab_content">内容3</div>
+            <div class="tab_content">内容4</div>
+        </div>
+    </div>
+    <script>
+        let tabTitle = document.querySelectorAll('.top .tab_title');
+        let tabContent = document.querySelectorAll('.bottom .tab_content');
+        for(let i = 0,length = tabTitle.length;i < length;i++){
+            tabTitle[i].addEventListener('click',(e) => {
+                for(let j = 0;j < length;j++){
+                    tabTitle[j].className = 'tab_title';
+                    tabContent[j].className = 'tab_content';
+                }
+                tabTitle[i].className = 'tab_title select';
+                tabContent[i].className = 'tab_content select';
+            },false);
+        }
+    </script>
+</body>
+
+</html>

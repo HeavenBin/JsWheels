@@ -1,0 +1,11 @@
+body,header,nav,section,footer,aside,div,span,img,a,ol,ul,li,p,input,button{margin: 0;padding: 0;-webkit-box-sizing: border-box; box-sizing: border-box;}
+body{font:.12rem/normal Microsoft Yahei,Arial;}
+img,a,input,button{display: block;}
+img {vertical-align: middle;}
+a{text-decoration: none;}
+a:visited,a:active,a:link,a:hover{color:#000;}
+ul,ol,li{list-style: none;}
+input,button{border-style: none;outline-style: none;}
+i{font-style: normal;}
+
+.auto{margin-left:auto; margin-right:auto;}

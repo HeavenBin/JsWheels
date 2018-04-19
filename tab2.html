@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font: 14px "simsun";
+        }
+
+        a {
+            color: #333;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #c81623;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .father {
+            width: 600px;
+            height: 400px;
+            margin: 100px auto;
+        }
+
+        .top {
+            height: 30px;
+            border-bottom: 1px solid #c81623;
+        }
+
+        .tabs {
+            height: 30px;
+            border: 1px solid #dddddd;
+            border-bottom: 0 none;
+            float: right;
+        }
+
+        .tab {
+            float: left;
+            position: relative;
+        }
+
+        li.tabCurrent {
+            background-color: #fff;
+            height: 27px;
+            border-top: 3px solid #c81623;
+            border-left: 1px solid #c81623;
+            border-right: 1px solid #c81623;
+        }
+
+        li.tabCurrent a {
+            line-height: 27px;
+            padding: 0 13px;
+        }
+
+        .tab a {
+            display: block;
+            padding: 0 14px;
+            height: 30px;
+            line-height: 30px;
+        }
+
+        .tab .line {
+            height: 20px;
+            border-left: 1px solid #ddd;
+            position: absolute;
+            right: 0;
+            top: 5px;
+        }
+
+        .goods {
+            width: 598px;
+            height: 368px;
+            border: 1px solid #dddddd;
+            border-top: 0 none;
+            display: none;
+            text-align: center;
+            line-height: 300px;
+        }
+
+        div.goodsShow {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="father">
+        <div class="top">
+            <ul class="tabs">
+                <li class="tab tabCurrent">
+                    <a href="javascript:void(0);">热门</a>
+                    <span class="line"></span>
+                </li>
+                <li class="tab">
+                    <a href="javascript:void(0);">国际大牌</a>
+                    <span class="line"></span>
+                </li>
+                <li class="tab">
+                    <a href="javascript:void(0);">国妆名品</a>
+                    <span class="line"></span>
+                </li>
+                <li class="tab">
+                    <a href="javascript:void(0);">个人护理</a>
+                    <span class="line"></span>
+                </li>
+                <li class="tab">
+                    <a href="javascript:void(0);">清洁用品</a>
+                    <span class="line"></span>
+                </li>
+                <li class="tab">
+                    <a href="javascript:void(0);">纸品湿巾</a>
+                </li>
+            </ul>
+        </div>
+        <div class="bottom">
+            <div name="content" class="goods goodsShow">这是热门的内容</div>
+            <div name="content" class="goods">这是国际大牌的内容</div>
+            <div name="content" class="goods">这是国妆名品的内容</div>
+            <div name="content" class="goods">这是个人护理的内容</div>
+            <div name="content" class="goods">这是清洁用品的内容</div>
+            <div name="content" class="goods">这是纸品湿巾的内容</div>
+        </div>
+    </div>
+    <script>
+        var tabs = document.getElementsByTagName("li");
+        var goods = document.getElementsByName("content");
+        for (var i = 0; i < tabs.length; i++) {
+            tabs[i].index = i;
+            tabs[i].onmouseover = function () {
+                for (var j = 0; j < tabs.length; j++) {
+                    var cn = tabs[j].className;
+                    if (cn.indexOf("tabCurrent")) {
+                        tabs[j].className = cn.replace("tabCurrent", "");
+                    }
+                }
+                var className = this.className;
+                this.className = className.concat(" tabCurrent");
+                for (var k = 0; k < goods.length; k++) {
+                    goods[k].style.display = "none";
+                }
+                goods[this.index].style.display = "block";
+            }
+        }
+    </script>
+</body>
+
+</html>

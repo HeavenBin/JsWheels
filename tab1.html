@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css">
+        .main {
+            width: 400px;
+            margin: 0 auto;
+        }
+
+        #title {
+            height: 30px;
+            line-height: 30px;
+        }
+
+        #title span {
+            float: left;
+            width: 120px;
+            height: 30px;
+            margin-right: 5px;
+            color: #333;
+            background: #eee;
+            text-align: center;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        #title span.on {
+            background: #333;
+            color: #fff;
+        }
+
+        #con {
+            background: #fafafa;
+            height: 200px;
+            border-top: 2px solid #333;
+        }
+
+        #con ul {
+            display: none;
+            padding: 10px;
+        }
+
+        #con ul.on {
+            display: block;
+        }
+
+        #con ul li {
+            height: 24px;
+            line-height: 24px;
+            border-bottom: 1px dotted #ccc;
+            text-indent: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <h1>原生javascript效果：选项卡切换</h1>
+        <div class="main">
+            <h4 id="title">
+                <span class="on">jquery</span>
+                <span>javascript</span>
+                <span>css</span>
+            </h4>
+            <div id="con">
+                <ul class="on">
+                    <li>
+                        <a href="#">jquery选项卡</a>
+                    </li>
+                    <li>
+                        <a href="#">jquery焦点图</a>
+                    </li>
+                    <li>
+                        <a href="#">jquery表单验证</a>
+                    </li>
+                    <li>
+                        <a href="#">jquery特效</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <a href="#">原生javascript</a>
+                    </li>
+                    <li>
+                        <a href="#">javascript特效</a>
+                    </li>
+                    <li>
+                        <a href="#">javascript笔记</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <a href="#">css sprites</a>
+                    </li>
+                    <li>
+                        <a href="#">css命名规则</a>
+                    </li>
+                    <li>
+                        <a href="#">css font属性</a>
+                    </li>
+                    <li>
+                        <a href="#">css background属性</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        var oTitle = document.getElementById('title');
+        var aSpan = oTitle.getElementsByTagName('span');
+        var oCon = document.getElementById('con');
+        var aUl = oCon.getElementsByTagName('ul');
+        var i = 0;
+        for (i = 0; i < aSpan.length; i++) {
+            aSpan[i].index = aUl[i].index = i;
+            aSpan[i].onclick = function () {
+                for (i = 0; i < aSpan.length; i++) {
+                    aSpan[i].className = '';
+                    aUl[i].className = '';
+                }
+                this.className = 'on';
+                aUl[this.index].className = 'on';
+            }
+        }
+    </script>
+</body>
+
+</html>
