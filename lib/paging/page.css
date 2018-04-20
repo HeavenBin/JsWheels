@@ -1,0 +1,31 @@
+#pagination{
+		
+	}
+	#pagination a{
+		display: inline-block;
+		width: 30px;
+		height: 30px;
+		line-height: 30px;
+		border:1px solid #000;
+		cursor: pointer;
+		text-decoration: none;
+		text-align: center;
+		color: #000;
+		margin-right: 10px;
+	}
+	#pagination a.point{
+		border:0;
+		font-weight: bold;
+	}
+	#pagination a.cur{
+		background: skyblue;
+	}
+	#pagination input.txt{
+		width: 20px;
+		height: 20px;
+		text-align: center;
+	}
+	#pagination a.btn{
+		width: 60px;
+		font-weight: bold;
+	}

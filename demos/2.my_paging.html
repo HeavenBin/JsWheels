@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="../lib/reset.css">
+  <style>
+    .paging{display:inline-flex}
+
+    .paging>button{width:50px;height:30px;border:1px solid #ccc;border-radius:10px}
+    .paging>button:hover{background-color:#ccc;cursor:pointer}
+    .paging>button.disabled{color:#bbb;cursor:default}
+    .paging>button.disabled:hover{background-color:#fff}
+
+    .paging>ul{display:flex;margin:0 5px}
+    .paging>ul>li{width:30px;height:30px;border:1px solid #ccc;border-radius:5px;text-align:center;font-size:15px;line-height:30px}
+    .paging>ul>li:hover{background-color:#ccc;cursor:pointer}
+
+    .paging>ul>li.selected{background-color:#333;color:#fff;cursor:default}
+    .paging>ul>li.selected:hover{background-color:#333}
+
+    .paging>ul>li.num_ellipsis { cursor: default; border: 0px; }
+    .paging>ul>li.num_ellipsis:hover { background-color: #fff; }
+
+  </style>
+</head>
+
+<body>
+  <div class="box">
+  </div>
+  <script src="../lib/paging/my_paging.js"></script>
+  <script>
+    let page = document.querySelector('.box');
+    new Paging({
+      element: '.box'
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../lib/paging/page.css">
+</head>
+
+<body>
+    <div id="pagination"></div>
+
+
+
+
+    <script src="../lib/paging/page.js"></script>
+    <script>
+        var pager = new Pagination({
+            "id": "pagination", //组件wrapper id名
+            "cur": 1, //当前页码
+            "total": 15, //总共页码
+            "change": function (page) { //当换页之后的回调函数，注入换到第几页的实参page
+                console.log(page);
+            }
+        });
+    </script>
+</body>
+
+</html>
