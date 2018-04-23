@@ -8,6 +8,9 @@
   <title>Document</title>
   <link rel="stylesheet" href="../lib/reset.css">
   <style>
+
+    .box{position: absolute;left: 50%;transform: translateX(-50%);margin-top: 100px;}
+
     .paging{display:inline-flex}
 
     .paging>button{width:50px;height:30px;border:1px solid #ccc;border-radius:10px}
@@ -31,11 +34,15 @@
 <body>
   <div class="box">
   </div>
+  <script src="../lib/bom/index.js"></script>
+  <script src="../lib/dom/index.js"></script>
   <script src="../lib/paging/my_paging.js"></script>
   <script>
-    let page = document.querySelector('.box');
     new Paging({
-      element: '.box'
+      element: '.box',
+      buttonCount: 10, // 显示的按钮个数
+      currentPage: 5, // 当前页
+      totalPage: 30, // 总页数
     });
   </script>
 </body>
