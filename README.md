@@ -10,7 +10,7 @@
 ## 预览
 https://heavenbin.github.io/JsWheels/
 
-## 进度
+## 进度
 - 部分BOM  
 - 部分DOM
 - Tab切换栏
